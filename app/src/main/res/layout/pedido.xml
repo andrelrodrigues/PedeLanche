@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/holo_orange_light">
+
+    <TextView
+        android:text="Meu Pedido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtPedido"
+        android:layout_weight="1"
+        android:layout_toStartOf="@+id/btnFechar" />
+
+    <Button
+        android:text="Fechar Pedido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="39dp"
+        android:id="@+id/btnFechar"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="26dp" />
+
+    <Button
+        android:text="Editar Pedido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnEditPedido"
+        android:layout_alignBaseline="@+id/btnFechar"
+        android:layout_alignBottom="@+id/btnFechar"
+        android:layout_toStartOf="@+id/txtPedido" />
+</RelativeLayout>

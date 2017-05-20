@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/holo_orange_light">
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="71dp"
+        android:layout_marginTop="116dp"
+        android:id="@+id/userName"
+        android:singleLine="true"
+        android:hint="Nome de Usuário" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:layout_below="@+id/userName"
+        android:layout_alignStart="@+id/userName"
+        android:layout_marginTop="58dp"
+        android:id="@+id/edPassword"
+        android:hint="Digite sua senha" />
+
+    <Button
+        android:text="Entrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edPassword"
+        android:layout_alignStart="@+id/edPassword"
+        android:layout_marginStart="59dp"
+        android:layout_marginTop="93dp"
+        android:id="@+id/btnLogin" />
+
+    <CheckBox
+        android:text="Lembrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edPassword"
+        android:layout_alignStart="@+id/edPassword"
+        android:layout_marginTop="35dp"
+        android:id="@+id/ckLembrar" />
+
+    <TextView
+        android:text="Criar Conta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="21dp"
+        android:id="@+id/txVcadastro"
+        android:clickable="true"
+        android:layout_alignBaseline="@+id/ckLembrar"
+        android:layout_alignBottom="@+id/ckLembrar"
+        android:layout_alignEnd="@+id/edPassword" />
+</RelativeLayout>

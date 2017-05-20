@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/holo_orange_light">
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:id="@+id/edtNome"
+        android:hint="Digite Seu Nome" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="phone"
+        android:ems="10"
+        android:layout_below="@+id/edtNome"
+        android:layout_alignStart="@+id/edtNome"
+        android:layout_marginTop="24dp"
+        android:id="@+id/edtFone"
+        android:hint="(DD) 9 9999-9999" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:layout_below="@+id/edtFone"
+        android:layout_alignStart="@+id/edtFone"
+        android:layout_marginTop="21dp"
+        android:id="@+id/edtPassword1"
+        android:hint="Digite sua senha" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:layout_below="@+id/edtPassword1"
+        android:layout_alignStart="@+id/edtPassword1"
+        android:layout_marginTop="25dp"
+        android:id="@+id/edtPassword2"
+        android:hint="Confirme sua senha" />
+
+    <Button
+        android:text="Cadastrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edtPassword2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="58dp"
+        android:id="@+id/btnCadastrar" />
+</RelativeLayout>
