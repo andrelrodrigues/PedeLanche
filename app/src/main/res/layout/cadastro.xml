@@ -34,7 +34,7 @@
         android:layout_below="@+id/edtFone"
         android:layout_alignStart="@+id/edtFone"
         android:layout_marginTop="21dp"
-        android:id="@+id/edtPassword1"
+        android:id="@+id/edtNewPassword"
         android:hint="Digite sua senha" />
 
     <EditText
@@ -42,18 +42,18 @@
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:ems="10"
-        android:layout_below="@+id/edtPassword1"
-        android:layout_alignStart="@+id/edtPassword1"
+        android:layout_below="@+id/edtNewPassword"
+        android:layout_alignStart="@+id/edtNewPassword"
         android:layout_marginTop="25dp"
-        android:id="@+id/edtPassword2"
+        android:id="@+id/edtConfNewPassword"
         android:hint="Confirme sua senha" />
 
     <Button
         android:text="Cadastrar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/edtPassword2"
+        android:layout_below="@+id/edtConfNewPassword"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="58dp"
-        android:id="@+id/btnCadastrar" />
+        android:id="@+id/btCadastrar" />
 </RelativeLayout>
