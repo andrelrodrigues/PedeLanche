@@ -13,7 +13,7 @@
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="71dp"
         android:layout_marginTop="116dp"
-        android:id="@+id/userName"
+        android:id="@+id/edUserName"
         android:singleLine="true"
         android:hint="Nome de Usuário" />
 
@@ -22,21 +22,21 @@
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:ems="10"
-        android:layout_below="@+id/userName"
-        android:layout_alignStart="@+id/userName"
+        android:layout_below="@+id/edUserName"
+        android:layout_alignStart="@+id/edUserName"
         android:layout_marginTop="58dp"
         android:id="@+id/edPassword"
         android:hint="Digite sua senha" />
 
     <Button
-        android:text="Entrar"
+        android:id="@+id/btLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/edPassword"
         android:layout_alignStart="@+id/edPassword"
+        android:layout_below="@+id/edPassword"
         android:layout_marginStart="59dp"
         android:layout_marginTop="93dp"
-        android:id="@+id/btnLogin" />
+        android:text="Entrar" />
 
     <CheckBox
         android:text="Lembrar"
@@ -48,13 +48,13 @@
         android:id="@+id/ckLembrar" />
 
     <TextView
-        android:text="Criar Conta"
+        android:id="@+id/tvCadastro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="21dp"
-        android:id="@+id/txVcadastro"
-        android:clickable="true"
         android:layout_alignBaseline="@+id/ckLembrar"
         android:layout_alignBottom="@+id/ckLembrar"
-        android:layout_alignEnd="@+id/edPassword" />
+        android:layout_alignEnd="@+id/edPassword"
+        android:layout_marginEnd="21dp"
+        android:clickable="true"
+        android:text="Criar Conta" />
 </RelativeLayout>
