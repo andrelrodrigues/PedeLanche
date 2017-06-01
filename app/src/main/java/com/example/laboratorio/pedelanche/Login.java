@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * Created by laboratorio on 18/05/17.
@@ -34,7 +35,12 @@ public class Login extends AppCompatActivity {
         btLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                if(edPassword==null){
+                    Toast.makeText(getApplicationContext(),"Digite sua Senha",Toast.LENGTH_LONG).show();
+                }
+                else if(edUserName==null){
+                    Toast.makeText(getApplicationContext(),"Digite um usuário",Toast.LENGTH_LONG).show();
+                }
             }
         });
 
