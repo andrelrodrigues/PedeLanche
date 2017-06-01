@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 /**
  * Created by laboratorio on 18/05/17.
@@ -12,7 +13,7 @@ import android.widget.EditText;
 
 public class Cadastro extends AppCompatActivity {
 
-    EditText edtNome, edtFone, edtNewPassword, edtConfNewPassword;
+    EditText edtNome, edtFone, edtNewPassword,edUserName, edPassword, edtConfNewPassword;
     Button btCadastrar;
 
     @Override
@@ -60,7 +61,6 @@ public class Cadastro extends AppCompatActivity {
             validacao = false;
             edtConfNewPassword.setError("Confirmar senha é Obrigatório");
         }
-
         if (! newPass.equals(confNewPass)) {
 
             validacao = false;

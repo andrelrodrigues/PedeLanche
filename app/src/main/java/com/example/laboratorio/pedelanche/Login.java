@@ -21,6 +21,7 @@ public class Login extends AppCompatActivity {
     TextView tvCadastro;
     Button btLogin;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,14 +33,25 @@ public class Login extends AppCompatActivity {
         tvCadastro = (TextView) findViewById(R.id.tvCadastro);
         btLogin = (Button) findViewById(R.id.btLogin);
 
+
+// Metodo que verifica se o campo usuário e senha foram preenchidos.
+
         btLogin.setOnClickListener(new View.OnClickListener() {
+            Boolean valida = true;
             @Override
             public void onClick(View v) {
-                if(edPassword==null){
-                    Toast.makeText(getApplicationContext(),"Digite sua Senha",Toast.LENGTH_LONG).show();
-                }
-                else if(edUserName==null){
-                    Toast.makeText(getApplicationContext(),"Digite um usuário",Toast.LENGTH_LONG).show();
+
+                if(edUserName.equals("")){
+                    valida = false;
+                    Toast.makeText(getApplicationContext(), "Digite o usuário",Toast.LENGTH_LONG).show();
+                    edPassword.requestFocus();
+                }if(edPassword.equals("")){
+                    valida = false;
+                    Toast.makeText(getApplicationContext(), "Digite o usuário",Toast.LENGTH_LONG).show();
+                    edPassword.requestFocus();
+                }if (edUserName!= null && edPassword != null){
+                    Intent intent = new Intent(Login.this, Menu.class);
+                    startActivity(intent);
                 }
             }
         });
@@ -47,10 +59,8 @@ public class Login extends AppCompatActivity {
         tvCadastro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Intent intent = new Intent(Login.this, Cadastro.class);
                 startActivity(intent);
-
             }
         });
 
