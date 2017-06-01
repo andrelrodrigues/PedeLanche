@@ -9,6 +9,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.laboratorio.pedelanche.model.AdaptaList;
+
 /**
  * Created by laboratorio on 18/05/17.
  */
@@ -69,7 +71,9 @@ public class Menu extends AppCompatActivity{
                 Toast.makeText(getApplicationContext(),Integer.toString(position), Toast.LENGTH_LONG).show();
             }
         });
+        AdaptaList adapterList;
     }
+
 
 
 
