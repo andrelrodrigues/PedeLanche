@@ -1,4 +1,4 @@
-package com.example.laboratorio.pedelanche.model;
+package com.example.laboratorio.pedelanche;
 
 import android.content.Context;
 import android.support.annotation.LayoutRes;

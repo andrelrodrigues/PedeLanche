@@ -1,15 +1,12 @@
 package com.example.laboratorio.pedelanche;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
-
-import com.example.laboratorio.pedelanche.model.AdaptaList;
 
 /**
  * Created by laboratorio on 18/05/17.
