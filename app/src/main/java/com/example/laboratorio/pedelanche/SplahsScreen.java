@@ -30,7 +30,7 @@ public class SplahsScreen extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         gifImageView = (GifImageView) findViewById(R.id.gifImageView);
-        progressBar = (ProgressBar) findViewById(R.id.progressBar);
+        //progressBar = (ProgressBar) findViewById(R.id.progressBar);
         progressBar.setVisibility(progressBar.VISIBLE);
 
         try {

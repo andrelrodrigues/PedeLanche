@@ -10,6 +10,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.laboratorio.pedelanche.data.PedeLancheDB;
+import com.example.laboratorio.pedelanche.model.Produto;
+
+import java.util.List;
+
 /**
  * Created by laboratorio on 18/05/17.
  */
@@ -21,6 +26,7 @@ public class Login extends AppCompatActivity {
     TextView tvCadastro;
     Button btLogin;
 
+    PedeLancheDB db = new PedeLancheDB(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +39,7 @@ public class Login extends AppCompatActivity {
         tvCadastro = (TextView) findViewById(R.id.tvCadastro);
         btLogin = (Button) findViewById(R.id.btLogin);
 
-
+        List<Produto> listaProduto = db.listaProdutos();
 // Metodo que verifica se o campo usuário e senha foram preenchidos.
 
         btLogin.setOnClickListener(new View.OnClickListener() {

@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.example.laboratorio.pedelanche.R;
 import com.example.laboratorio.pedelanche.model.Produto;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,6 +19,8 @@ import java.util.List;
  */
 
 public class ProdutosAdapter extends ArrayAdapter<Produto> {
+
+    NumberFormat formato = NumberFormat.getCurrencyInstance();
 
     public ProdutosAdapter(Context context, ArrayList<Produto> item){
         super(context, 0, (List<Produto>) item );
@@ -43,7 +46,7 @@ public class ProdutosAdapter extends ArrayAdapter<Produto> {
         descricao.setText(produto.getProduto());
 
         TextView valor = (TextView) itemView.findViewById(R.id.item_valor);
-        valor.setText(produto.getValor().toString());
+        valor.setText(formato.format(produto.getValor()));
 
 
 

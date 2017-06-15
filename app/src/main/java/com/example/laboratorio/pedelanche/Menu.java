@@ -9,9 +9,11 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.laboratorio.pedelanche.adapter.ProdutosAdapter;
+import com.example.laboratorio.pedelanche.data.PedeLancheDB;
 import com.example.laboratorio.pedelanche.model.Produto;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by laboratorio on 18/05/17.
@@ -19,29 +21,21 @@ import java.util.ArrayList;
 
 public class Menu extends AppCompatActivity{
 
+    PedeLancheDB db = new PedeLancheDB(this);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu);
         ListView listaMenu = (ListView) findViewById(R.id.list_menu);
 
-        ArrayList<Produto> arrayList = new ArrayList<>();
+        ArrayList<Produto> listProdutos =  db.listaProdutos();
 
-        arrayList.add(new Produto("Coxinha", 2.00f));
-        arrayList.add(new Produto("Torta de Frango",5.00f));
-        arrayList.add(new Produto("Torta de Calabresa", 5.00f));
-        arrayList.add(new Produto("Torta Mista", 5.00f));
-        arrayList.add(new Produto("Hot Dog na Chapa", 5.00f));
-        arrayList.add(new Produto("Bolo no Pote",3.00f));
-        arrayList.add(new Produto("Tapioca Recheada", 5.00f));
-        arrayList.add(new Produto("Cuscus com Manteiga", 3.00f));
-
-        ProdutosAdapter adapter = new ProdutosAdapter(this, arrayList);
+        ProdutosAdapter adapter = new ProdutosAdapter(this, listProdutos);
 
         listaMenu.setAdapter(adapter);
 
     }
-
 
 
 

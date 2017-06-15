@@ -5,7 +5,7 @@ import android.provider.BaseColumns;
  * Created by andrerodrigues on 13/06/17.
  */
 
-//Classe de contrato, com cosntantes da tabela Produto
+//Classe de contrato, com cosntantes da tabela Usuario
 public final class UsuarioContract {
 
     public static abstract class UsuarioEntry implements BaseColumns {

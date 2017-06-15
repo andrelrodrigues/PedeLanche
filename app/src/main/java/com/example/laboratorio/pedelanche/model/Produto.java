@@ -8,11 +8,16 @@ public class Produto {
 
     private int idProduto;
     private String produto;
-    private Float valor;
+    private double valor;
 
-    public  Produto(String produto, Float valor){
+    public  Produto(int idProduto, String produto, double valor){
+        this.idProduto = idProduto;
         this.produto = produto;
         this.valor = valor;
+    }
+
+    public Produto() {
+
     }
 
     public int getIdProduto() {
@@ -31,11 +36,11 @@ public class Produto {
         this.produto = produto;
     }
 
-    public Float getValor() {
+    public double getValor() {
         return valor;
     }
 
-    public void setValor(Float valor) {
+    public void setValor(double valor) {
         this.valor = valor;
     }
 }

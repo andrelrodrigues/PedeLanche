@@ -1,8 +1,18 @@
 package com.example.laboratorio.pedelanche.data;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
+import android.widget.ArrayAdapter;
+
+import com.example.laboratorio.pedelanche.Login;
+import com.example.laboratorio.pedelanche.model.Produto;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by andrerodrigues on 11/06/17.
@@ -38,6 +48,46 @@ public class PedeLancheDB extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
+
+    }
+
+    public  void addProduto(Produto produto){
+
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+
+        values.put(ProtutoContract.ProdutoEntry._IDPROD, produto.getIdProduto());
+        values.put(ProtutoContract.ProdutoEntry.COLUMN_DESCRICAO, produto.getProduto());
+        values.put(ProtutoContract.ProdutoEntry.COLUMN_VALOR, produto.getValor());
+
+        db.insert(ProtutoContract.ProdutoEntry.TABLE_NAME, null, values);
+        db.close();
+    }
+
+    public ArrayList<Produto> listaProdutos(){
+
+        ArrayList<Produto> listProdutos = new ArrayList<>();
+
+        String query = "SELECT * FROM " + ProtutoContract.ProdutoEntry.TABLE_NAME;
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+
+        if (cursor.moveToFirst()){
+            do {
+                Produto produto = new Produto();
+
+                produto.setIdProduto(Integer.parseInt(cursor.getString(0)));
+                produto.setProduto(cursor.getString(1));
+                produto.setValor(Double.parseDouble(cursor.getString(2)));
+
+                listProdutos.add(produto);
+
+            } while (cursor.moveToNext());
+        }
+
+        return listProdutos;
 
     }
 }
