@@ -91,16 +91,19 @@ public void incluiProduto(){
     db.addProduto(new Produto(15,"Risole de Franco c/ Catupiry",3.50));
     db.addProduto(new Produto(16,"Risole de Queijo",3.00));
     db.addProduto(new Produto(17,"Risole de Presunto e Queijo",3.00));
-    db.addProduto(new Produto(18,"Refrigerante Colca-Cola",3.50));
-    db.addProduto(new Produto(18,"Refrigerante Fanta Laranja",3.50));
-    db.addProduto(new Produto(18,"Refrigerante Fanta Uva",3.50));
-    db.addProduto(new Produto(18,"Refrigerante Guarana",3.50));
-    db.addProduto(new Produto(18,"Refrigerante Sprite",3.50));
-    db.addProduto(new Produto(18,"Suco de Acerola",3.50));
-    db.addProduto(new Produto(18,"Suco de Goiaba",3.00));
-    db.addProduto(new Produto(18,"Suco de Laranja",3.50));
-    db.addProduto(new Produto(18,"Suco de Maracuja",3.50));
-    db.addProduto(new Produto(18,"Suco de Uva",4.50));
+    db.addProduto(new Produto(18,"Refrigerante Coca-Cola",3.50));
+    db.addProduto(new Produto(19,"Refrigerante Fanta Laranja",3.50));
+    db.addProduto(new Produto(20,"Refrigerante Coca Zero",3.50));
+    db.addProduto(new Produto(21,"Refrigerante Guarana",3.50));
+    db.addProduto(new Produto(22,"Refrigerante Sprite",3.50));
+    db.addProduto(new Produto(23,"Suco de Goiaba",3.50));
+    db.addProduto(new Produto(24,"Suco de Morango",3.00));
+    db.addProduto(new Produto(25,"Suco de Acerola",3.50));
+    db.addProduto(new Produto(26,"Suco de Uva",3.50));
+    db.addProduto(new Produto(27,"Suco de Laranja",4.50));
+    db.addProduto(new Produto(28,"Suco de Maracujá",4.50));
+    db.addProduto(new Produto(29,"Café - Executivo",2.50));
+    db.addProduto(new Produto(30,"Chocolate Quente",5.50));
 
     //Toast.makeText(MainActivity.this,"Inserindo produtos na tabela",Toast.LENGTH_LONG).show();
 }
