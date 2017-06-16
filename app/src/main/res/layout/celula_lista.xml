@@ -19,7 +19,7 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:theme="@style/Base.Widget.AppCompat.ImageButton"
-                app:srcCompat="@drawable/coxinha" />
+                app:srcCompat="@drawable/salgado1" />
 
             <TextView
                 android:id="@+id/textView3"
