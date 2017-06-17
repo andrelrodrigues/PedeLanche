@@ -7,6 +7,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.laboratorio.pedelanche.data.PedeLancheDB;
+import com.example.laboratorio.pedelanche.model.Usuario;
+
 /**
  * Created by laboratorio on 18/05/17.
  */
@@ -70,6 +73,18 @@ public class Cadastro extends AppCompatActivity {
 
 
         if(validacao){
+            Usuario usuario = new Usuario();
+
+            usuario.setNome(nome);
+            usuario.setTelefone(fone);
+            usuario.setSenha(newPass);
+
+            PedeLancheDB db = new PedeLancheDB(this);
+
+            db.addUsuario(usuario);
+
+            Toast.makeText(Cadastro.this,"Usuário cadastrado!", Toast.LENGTH_SHORT).show();
+
             limpaCampos();
         }
 

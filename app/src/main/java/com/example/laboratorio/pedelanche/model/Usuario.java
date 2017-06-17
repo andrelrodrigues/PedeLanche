@@ -6,9 +6,30 @@ package com.example.laboratorio.pedelanche.model;
 
 public class Usuario {
 
+    private int idUsuario;
     private String nome;
-    private int telefone;
+    private String telefone;
     private String senha;
+
+    public Usuario(){
+
+    }
+
+    public  Usuario(int idUsuario, String nome, String telefone, String senha ){
+
+        this.idUsuario = idUsuario;
+        this.nome = nome;
+        this.telefone = telefone;
+        this.senha = senha;
+    }
+
+    public int getIdUsuario() {
+        return idUsuario;
+    }
+
+    public void setIdUsuario(int idUsuario) {
+        this.idUsuario = idUsuario;
+    }
 
     public String getNome() {
         return nome;
@@ -18,11 +39,11 @@ public class Usuario {
         this.nome = nome;
     }
 
-    public int getTelefone() {
+    public String getTelefone() {
         return telefone;
     }
 
-    public void setTelefone(int telefone) {
+    public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
 
@@ -33,4 +54,6 @@ public class Usuario {
     public void setSenha(String senha) {
         this.senha = senha;
     }
+
+
 }

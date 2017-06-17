@@ -5,11 +5,13 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.media.session.PlaybackState;
 import android.util.Log;
 import android.widget.ArrayAdapter;
 
 import com.example.laboratorio.pedelanche.Login;
 import com.example.laboratorio.pedelanche.model.Produto;
+import com.example.laboratorio.pedelanche.model.Usuario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -86,8 +88,61 @@ public class PedeLancheDB extends SQLiteOpenHelper {
 
             } while (cursor.moveToNext());
         }
-
+        db.close();
         return listProdutos;
 
+    }
+
+
+    public void addUsuario(Usuario usuario){
+
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+
+        values.put(UsuarioContract.UsuarioEntry.COLUMN_NOME, usuario.getNome());
+        values.put(UsuarioContract.UsuarioEntry.COLUMN_TELEFONE, usuario.getTelefone());
+        values.put(UsuarioContract.UsuarioEntry.COLUMN_SENHA, usuario.getSenha());
+
+        db.insert(UsuarioContract.UsuarioEntry.TABLE_NAME, null, values);
+        db.close();
+
+    }
+
+    public String selecionaUsuario(String usuario){
+
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        String sql = "Select " + UsuarioContract.UsuarioEntry.COLUMN_NOME + ", " +
+                UsuarioContract.UsuarioEntry.COLUMN_SENHA + " from "+
+                UsuarioContract.UsuarioEntry.TABLE_NAME;
+
+        Cursor cursor = db.rawQuery(sql,null);
+
+        String usuario1, senha;
+
+        senha ="Usuario inesistente";
+
+        if(cursor.moveToFirst()){
+            do {
+
+                usuario1 = cursor.getString(0);
+                Log.d("USUARIO: ", usuario1);
+
+                if (usuario1.equals(usuario)){
+
+                    senha = cursor.getString(1);
+                    Log.d("SENHA: ", senha);
+
+
+                    break;
+                }
+
+
+            }while (cursor.moveToNext());
+        }
+
+
+        return senha;
     }
 }

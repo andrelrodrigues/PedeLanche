@@ -12,8 +12,11 @@ import android.widget.Toast;
 
 import com.example.laboratorio.pedelanche.data.PedeLancheDB;
 import com.example.laboratorio.pedelanche.model.Produto;
+import com.example.laboratorio.pedelanche.model.Usuario;
 
 import java.util.List;
+
+import static android.widget.Toast.LENGTH_LONG;
 
 /**
  * Created by laboratorio on 18/05/17.
@@ -39,6 +42,7 @@ public class Login extends AppCompatActivity {
         tvCadastro = (TextView) findViewById(R.id.tvCadastro);
         btLogin = (Button) findViewById(R.id.btLogin);
 
+
         List<Produto> listaProduto = db.listaProdutos();
 // Metodo que verifica se o campo usuário e senha foram preenchidos.
 
@@ -49,15 +53,27 @@ public class Login extends AppCompatActivity {
 
                 if(edUserName.equals("")){
                     valida = false;
-                    Toast.makeText(getApplicationContext(), "Digite o usuário",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Digite o usuário", LENGTH_LONG).show();
                     edPassword.requestFocus();
                 }if(edPassword.equals("")){
                     valida = false;
-                    Toast.makeText(getApplicationContext(), "Digite o usuário",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Digite o usuário", LENGTH_LONG).show();
                     edPassword.requestFocus();
                 }if (edUserName!= null && edPassword != null){
-                    Intent intent = new Intent(Login.this, Menu.class);
-                    startActivity(intent);
+
+
+                    String confSenha = db.selecionaUsuario(edUserName.getText().toString());
+
+                    if(confSenha.equals(edPassword.getText().toString())){
+
+                        Intent intent = new Intent(Login.this, Menu.class);
+                        startActivity(intent);
+
+                    }else {
+                        Toast.makeText(Login.this,"Usuario ou Senha invalido !!",Toast.LENGTH_LONG).show();
+                    }
+
+
                 }
             }
         });
