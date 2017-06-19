@@ -11,6 +11,9 @@
         android:layout_height="100dp"
         android:scaleType="centerInside"
         android:src="@drawable/salgado1"
+        android:focusableInTouchMode="false"
+        android:clickable="false"
+        android:focusable="false"
         />
 
     <LinearLayout
@@ -27,7 +30,10 @@
             android:layout_marginTop="10dp"
             android:text="Produto"
             android:textSize="19dp"
-            android:textColor="@android:color/black"/>
+            android:textColor="@android:color/black"
+            android:focusableInTouchMode="false"
+            android:clickable="false"
+            android:focusable="false"/>
 
         <TextView
             android:id="@+id/item_valor"
@@ -36,15 +42,19 @@
             android:layout_marginTop="5dp"
             android:text="2,50"
             android:textSize="16dp"
-            android:textColor="@android:color/black"/>/
+            android:textColor="@android:color/black"
+            android:focusableInTouchMode="false"
+            android:clickable="false"
+            android:focusable="false"/>/
 
     </LinearLayout>
 
-    <ImageButton
+    <ImageView
         android:id="@+id/imageButton2"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_weight="1.01"
-        app:srcCompat="@android:drawable/ic_menu_add" />
+        app:srcCompat="@android:drawable/ic_menu_add"
+        />
 
 </LinearLayout>
