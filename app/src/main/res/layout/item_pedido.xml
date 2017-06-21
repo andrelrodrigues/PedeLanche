@@ -8,7 +8,7 @@
     <ImageView
         android:id="@+id/item_salgado"
         android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_height="105dp"
         android:scaleType="centerInside"
         android:src="@drawable/salgado1"
         android:focusableInTouchMode="false"

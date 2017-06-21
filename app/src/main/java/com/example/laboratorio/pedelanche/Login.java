@@ -44,13 +44,14 @@ public class Login extends AppCompatActivity {
 
 
         List<Produto> listaProduto = db.listaProdutos();
-// Metodo que verifica se o campo usuário e senha foram preenchidos.
+
 
         btLogin.setOnClickListener(new View.OnClickListener() {
             Boolean valida = true;
             @Override
             public void onClick(View v) {
 
+                // Verifica se o campo usuário e senha foram preenchido
                 if(edUserName.equals("")){
                     valida = false;
                     Toast.makeText(getApplicationContext(), "Digite o usuário", LENGTH_LONG).show();
@@ -61,9 +62,9 @@ public class Login extends AppCompatActivity {
                     edPassword.requestFocus();
                 }if (edUserName!= null && edPassword != null){
 
-
                     String confSenha = db.selecionaUsuario(edUserName.getText().toString());
 
+                    //Confirma senha digitada pelo usuário com senha salva do DB.
                     if(confSenha.equals(edPassword.getText().toString())){
 
                         Intent intent = new Intent(Login.this, Menu.class);

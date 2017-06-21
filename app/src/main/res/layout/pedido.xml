@@ -40,10 +40,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Total do pedido:"
-        android:textSize="18dp"
+        android:textSize="19dp"
         android:textStyle="bold"
-        android:layout_above="@+id/btnEditPedido"
-        android:layout_toStartOf="@+id/btnFechar"
+        android:layout_above="@+id/btnFinalizaPedido"
+        android:layout_toStartOf="@+id/btnCancelaPedido"
         android:layout_marginEnd="14dp" />
 
     <TextView
@@ -51,7 +51,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="R$ 2.50"
-        android:textSize="18dp"
+        android:textSize="19dp"
         android:textStyle="bold"
         android:layout_toEndOf="@+id/tvTotal"
         android:layout_below="@+id/relativeLayout" />
@@ -59,15 +59,16 @@
         android:text=" Enviar Pedido "
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/btnEditPedido"
+        android:id="@+id/btnFinalizaPedido"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="19dp" />
 
     <Button
         android:text="Cancelar Pedido"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/btnFechar"
+        android:id="@+id/btnCancelaPedido"
         android:layout_marginEnd="19dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true" />
