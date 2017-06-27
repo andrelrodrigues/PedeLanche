@@ -1,33 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/holo_orange_light">
 
     <TextView
-        android:text="Meu Pedido"
+        android:text="Finalizando Pedido"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/txtPedido"
-        android:layout_weight="1"
-        android:layout_toStartOf="@+id/btnFechar" />
+        android:layout_centerHorizontal="true"
+        android:textSize="22dp"
+        android:textStyle="bold"/>
+        <!--android:layout_toStartOf="@+id/btnFechar"-->
+    <RelativeLayout
+        android:padding="@dimen/activity_horizontal_margin"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/txtPedido"
+        android:layout_above="@+id/tvTotal"
+        android:id="@+id/relativeLayout"
+        android:layout_alignParentStart="true">
 
-    <Button
-        android:text="Fechar Pedido"
+        <ListView
+            android:id="@+id/list_pedido"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/item_pedido"
+            >
+        </ListView>
+
+    </RelativeLayout>
+
+
+
+    <TextView
+        android:id="@+id/tvTotal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="39dp"
-        android:id="@+id/btnFechar"
+        android:text="Total do pedido:"
+        android:textSize="19dp"
+        android:textStyle="bold"
+        android:layout_above="@+id/btnFinalizaPedido"
+        android:layout_toStartOf="@+id/btnCancelaPedido"
+        android:layout_marginEnd="14dp" />
+
+    <TextView
+        android:id="@+id/tvValorTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="R$ 2.50"
+        android:textSize="19dp"
+        android:textStyle="bold"
+        android:layout_toEndOf="@+id/tvTotal"
+        android:layout_below="@+id/relativeLayout" />
+    <Button
+        android:text=" Enviar Pedido "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnFinalizaPedido"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="26dp" />
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="19dp" />
 
     <Button
-        android:text="Editar Pedido"
+        android:text="Cancelar Pedido"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/btnEditPedido"
-        android:layout_alignBaseline="@+id/btnFechar"
-        android:layout_alignBottom="@+id/btnFechar"
-        android:layout_toStartOf="@+id/txtPedido" />
+        android:id="@+id/btnCancelaPedido"
+        android:layout_marginEnd="19dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true" />
+
+
+
+
 </RelativeLayout>

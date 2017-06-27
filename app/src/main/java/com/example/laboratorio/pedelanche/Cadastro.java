@@ -5,6 +5,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import com.example.laboratorio.pedelanche.data.PedeLancheDB;
+import com.example.laboratorio.pedelanche.model.Usuario;
 
 /**
  * Created by laboratorio on 18/05/17.
@@ -12,7 +16,7 @@ import android.widget.EditText;
 
 public class Cadastro extends AppCompatActivity {
 
-    EditText edtNome, edtFone, edtNewPassword, edtConfNewPassword;
+    EditText edtNome, edtFone, edtNewPassword,edUserName, edPassword, edtConfNewPassword;
     Button btCadastrar;
 
     @Override
@@ -60,7 +64,6 @@ public class Cadastro extends AppCompatActivity {
             validacao = false;
             edtConfNewPassword.setError("Confirmar senha é Obrigatório");
         }
-
         if (! newPass.equals(confNewPass)) {
 
             validacao = false;
@@ -70,6 +73,18 @@ public class Cadastro extends AppCompatActivity {
 
 
         if(validacao){
+            Usuario usuario = new Usuario();
+
+            usuario.setNome(nome);
+            usuario.setTelefone(fone);
+            usuario.setSenha(newPass);
+
+            PedeLancheDB db = new PedeLancheDB(this);
+
+            db.addUsuario(usuario);
+
+            Toast.makeText(Cadastro.this,"Usuário cadastrado!", Toast.LENGTH_SHORT).show();
+
             limpaCampos();
         }
 
